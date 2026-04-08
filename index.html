@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SmartTech Same-Day Appliance Repair | Dallas, TX</title>
+  <meta name="robots" content="index, follow"/>
+  <meta name="geo.region" content="US-TX"/>
+  <meta name="geo.placename" content="Dallas, Texas"/>
+  <meta property="og:title" content="SmartTech Same-Day Appliance Repair | Dallas, TX"/>
+  <meta property="og:description" content="Same-day appliance repair in Dallas, TX. Washers, dryers, fridges, stoves, dishwashers. Licensed &amp; insured. Call (214) 555-0199."/>
+  <meta property="og:type" content="website"/>
+  <meta name="description" content="Same-day appliance repair in Dallas, TX. We fix washers, dryers, refrigerators, stoves, and dishwashers. Licensed technicians, upfront pricing, 90-day warranty. Call (214) 555-0199."/>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; color: #1e293b; background: #fff; }
+
+    /* NAV */
+    .st-nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 40px; background: #fff; border-bottom: 1px solid #e5e7eb; }
+    .st-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .st-logo-icon { width: 38px; height: 38px; background: #f97316; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+    .st-logo-text { font-size: 16px; font-weight: bold; color: #1e293b; line-height: 1.2; }
+    .st-logo-sub { font-size: 11px; color: #f97316; font-weight: normal; display: block; }
+    .st-nav-phone { background: #f97316; color: #fff; padding: 9px 18px; border-radius: 8px; font-size: 14px; font-weight: bold; border: none; cursor: pointer; text-decoration: none; display: inline-block; }
+
+    /* HERO */
+    .st-hero { background: #fff7ed; padding: 60px 40px 50px; }
+    .st-hero-inner { display: grid; grid-template-columns: 1fr 360px; gap: 40px; align-items: center; max-width: 1100px; margin: 0 auto; }
+    .st-badge { display: inline-block; background: #f97316; color: #fff; font-size: 12px; padding: 4px 14px; border-radius: 20px; margin-bottom: 16px; font-weight: bold; }
+    .st-hero h1 { font-size: 34px; font-weight: bold; color: #1e293b; line-height: 1.25; margin-bottom: 16px; }
+    .st-hero h1 span { color: #f97316; }
+    .st-hero p { font-size: 16px; color: #64748b; line-height: 1.7; margin-bottom: 28px; }
+    .st-hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .st-btn-primary { background: #f97316; color: #fff; padding: 13px 26px; border-radius: 8px; font-size: 15px; font-weight: bold; border: none; cursor: pointer; text-decoration: none; display: inline-block; }
+    .st-btn-secondary { background: #fff; color: #f97316; padding: 13px 26px; border-radius: 8px; font-size: 15px; font-weight: bold; border: 2px solid #f97316; cursor: pointer; text-decoration: none; display: inline-block; }
+
+    /* FORM CARD */
+    .st-card { background: #fff; border-radius: 16px; padding: 28px; border: 1px solid #fed7aa; }
+    .st-card h3 { font-size: 16px; font-weight: bold; color: #1e293b; margin-bottom: 18px; }
+    .st-field { width: 100%; background: #fff7ed; border: 1px solid #fed7aa; color: #1e293b; padding: 10px 14px; border-radius: 8px; font-size: 14px; margin-bottom: 10px; }
+    .st-submit { background: #f97316; color: #fff; padding: 12px; border-radius: 8px; font-size: 15px; font-weight: bold; border: none; width: 100%; cursor: pointer; margin-top: 4px; }
+
+    /* TRUST BAR */
+    .st-trust { background: #f97316; padding: 13px 40px; }
+    .st-trust-items { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; max-width: 1100px; margin: 0 auto; }
+    .st-trust-item { color: #fff; font-size: 13px; font-weight: bold; display: flex; align-items: center; gap: 6px; }
+    .st-dot { width: 7px; height: 7px; background: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; }
+
+    /* SECTIONS */
+    .st-section { padding: 56px 40px; max-width: 1100px; margin: 0 auto; }
+    .st-section-bg { background: #f8fafc; }
+    .st-section-orange { background: #fff7ed; }
+    .st-label { font-size: 12px; color: #f97316; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    .st-section h2 { font-size: 26px; font-weight: bold; margin-bottom: 10px; color: #1e293b; }
+    .st-sub { font-size: 15px; color: #64748b; margin-bottom: 32px; line-height: 1.6; }
+
+    /* SERVICES */
+    .st-services { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
+    .st-service { background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 22px 16px; text-align: center; }
+    .st-service:hover { border-color: #f97316; }
+    .st-service-icon { font-size: 28px; margin-bottom: 10px; display: block; }
+    .st-service-name { font-size: 14px; font-weight: bold; color: #1e293b; margin-bottom: 4px; }
+    .st-service-desc { font-size: 12px; color: #94a3b8; }
+
+    /* WHY */
+    .st-why { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; }
+    .st-why-card { background: #fff; border-radius: 14px; padding: 22px; border: 1px solid #fed7aa; }
+    .st-why-icon { font-size: 24px; margin-bottom: 10px; }
+    .st-why-title { font-size: 15px; font-weight: bold; margin-bottom: 6px; color: #1e293b; }
+    .st-why-text { font-size: 13px; color: #64748b; line-height: 1.6; }
+
+    /* REVIEWS */
+    .st-reviews { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+    .st-review { background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 20px; }
+    .st-stars { color: #f97316; font-size: 15px; margin-bottom: 8px; }
+    .st-review-text { font-size: 14px; color: #64748b; line-height: 1.6; margin-bottom: 14px; }
+    .st-reviewer { display: flex; align-items: center; gap: 10px; }
+    .st-avatar { width: 36px; height: 36px; border-radius: 50%; background: #ffedd5; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: bold; color: #c2410c; flex-shrink: 0; }
+    .st-reviewer-name { font-size: 14px; font-weight: bold; color: #1e293b; }
+    .st-reviewer-loc { font-size: 12px; color: #94a3b8; }
+
+    /* AREAS */
+    .st-areas { display: flex; flex-wrap: wrap; gap: 10px; }
+    .st-area-pill { background: #ffedd5; color: #c2410c; font-size: 13px; font-weight: bold; padding: 6px 16px; border-radius: 20px; }
+
+    /* CTA */
+    .st-cta { background: #fff7ed; padding: 56px 40px; text-align: center; border-top: 1px solid #fed7aa; }
+    .st-cta h2 { font-size: 26px; font-weight: bold; color: #1e293b; margin-bottom: 12px; }
+    .st-cta p { font-size: 15px; color: #64748b; margin-bottom: 24px; }
+    .st-cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .st-cta-phone { background: #f97316; color: #fff; padding: 14px 30px; border-radius: 8px; font-size: 16px; font-weight: bold; border: none; cursor: pointer; text-decoration: none; display: inline-block; }
+    .st-cta-outline { background: #fff; color: #f97316; padding: 14px 26px; border-radius: 8px; font-size: 15px; font-weight: bold; border: 2px solid #f97316; cursor: pointer; text-decoration: none; display: inline-block; }
+
+    /* FOOTER */
+    .st-footer { background: #1e293b; padding: 26px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
+    .st-footer-brand { font-size: 13px; color: #94a3b8; }
+    .st-footer-links { display: flex; gap: 20px; }
+    .st-footer-link { font-size: 13px; color: #94a3b8; cursor: pointer; text-decoration: none; }
+
+    /* MOBILE */
+    @media (max-width: 720px) {
+      .st-nav { padding: 14px 20px; }
+      .st-hero { padding: 40px 20px 36px; }
+      .st-hero-inner { grid-template-columns: 1fr; }
+      .st-card { display: none; }
+      .st-trust { padding: 12px 20px; }
+      .st-section { padding: 40px 20px; }
+      .st-cta { padding: 40px 20px; }
+      .st-footer { padding: 22px 20px; flex-direction: column; align-items: flex-start; }
+      .st-hero h1 { font-size: 26px; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "SmartTech Same-Day Appliance Repair",
+    "description": "Same-day appliance repair in Dallas, TX. We fix washers, dryers, refrigerators, stoves, and dishwashers.",
+    "telephone": "(214) 555-0199",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dallas",
+      "addressRegion": "TX",
+      "addressCountry": "US"
+    },
+    "areaServed": ["Dallas", "Plano", "Irving", "Garland", "Mesquite", "Arlington", "Grand Prairie", "Carrollton", "Richardson", "Frisco", "McKinney", "Denton"],
+    "openingHours": "Mo-Su 07:00-20:00",
+    "priceRange": "$$",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Appliance Repair Services",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Washer Repair"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Dryer Repair"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Refrigerator Repair"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Stove and Oven Repair"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Dishwasher Repair"}}
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="st-nav">
+  <a href="#" class="st-logo">
+    <div class="st-logo-icon">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+        <path d="M5 11h12M11 5v12" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+        <rect x="2" y="2" width="18" height="18" rx="4" stroke="#fff" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div class="st-logo-text">SmartTech<span class="st-logo-sub">Same-Day Appliance Repair</span></div>
+  </a>
+  <a href="tel:2145550199" class="st-nav-phone">📞 (214) 555-0199</a>
+</nav>
+
+<!-- ===== HERO ===== -->
+<div class="st-hero">
+  <div class="st-hero-inner">
+    <div>
+      <span class="st-badge">📍 Dallas &amp; DFW Area</span>
+      <h1>Expert appliance repair —<br/><span>same day</span>, guaranteed</h1>
+      <p>Fast, affordable repairs for all major appliances. Serving Dallas and the surrounding DFW area. Most repairs completed in a single visit.</p>
+      <div class="st-hero-btns">
+        <a href="tel:2145550199" class="st-btn-primary">Book a repair today</a>
+        <a href="tel:2145550199" class="st-btn-secondary">Call (214) 555-0199</a>
+      </div>
+    </div>
+    <div class="st-card">
+      <h3>Get a free estimate</h3>
+      <input class="st-field" type="text" placeholder="Your name" />
+      <input class="st-field" type="tel" placeholder="Phone number" />
+      <select class="st-field">
+        <option value="">Select appliance</option>
+        <option>Washer</option>
+        <option>Dryer</option>
+        <option>Refrigerator</option>
+        <option>Stove / Oven</option>
+        <option>Dishwasher</option>
+        <option>Other</option>
+      </select>
+      <input class="st-field" type="text" placeholder="Zip code (Dallas area)" />
+      <button class="st-submit">Get my free estimate →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== TRUST BAR ===== -->
+<div class="st-trust">
+  <div class="st-trust-items">
+    <span class="st-trust-item"><span class="st-dot"></span>Same-day service available</span>
+    <span class="st-trust-item"><span class="st-dot"></span>All brands serviced</span>
+    <span class="st-trust-item"><span class="st-dot"></span>90-day parts warranty</span>
+    <span class="st-trust-item"><span class="st-dot"></span>Licensed &amp; insured</span>
+    <span class="st-trust-item"><span class="st-dot"></span>No fix, no fee</span>
+  </div>
+</div>
+
+<!-- ===== SERVICES ===== -->
+<div class="st-section-bg">
+  <div class="st-section">
+    <p class="st-label">What we repair</p>
+    <h2>All major home appliances</h2>
+    <p class="st-sub">From washers to refrigerators, our certified technicians fix it fast — right at your home.</p>
+    <div class="st-services">
+      <div class="st-service"><span class="st-service-icon">🫧</span><div class="st-service-name">Washer</div><div class="st-service-desc">All brands &amp; models</div></div>
+      <div class="st-service"><span class="st-service-icon">♨️</span><div class="st-service-name">Dryer</div><div class="st-service-desc">Gas &amp; electric</div></div>
+      <div class="st-service"><span class="st-service-icon">🧊</span><div class="st-service-name">Refrigerator</div><div class="st-service-desc">French door, side-by-side</div></div>
+      <div class="st-service"><span class="st-service-icon">🔥</span><div class="st-service-name">Stove / Oven</div><div class="st-service-desc">Gas, electric &amp; induction</div></div>
+      <div class="st-service"><span class="st-service-icon">🍽️</span><div class="st-service-name">Dishwasher</div><div class="st-service-desc">All major brands</div></div>
+      <div class="st-service"><span class="st-service-icon">❄️</span><div class="st-service-name">Freezer</div><div class="st-service-desc">Chest &amp; upright</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== WHY ===== -->
+<div class="st-section-orange">
+  <div class="st-section">
+    <p class="st-label">Why choose us</p>
+    <h2>The SmartTech difference</h2>
+    <p class="st-sub">Hundreds of Dallas homeowners trust us every month.</p>
+    <div class="st-why">
+      <div class="st-why-card"><div class="st-why-icon">⚡</div><div class="st-why-title">Same-day appointments</div><div class="st-why-text">Call before noon and we'll be there today. We know your time is valuable.</div></div>
+      <div class="st-why-card"><div class="st-why-icon">🔧</div><div class="st-why-title">One-visit fix</div><div class="st-why-text">Our vans carry hundreds of parts so most repairs are done in a single trip.</div></div>
+      <div class="st-why-card"><div class="st-why-icon">✅</div><div class="st-why-title">90-day warranty</div><div class="st-why-text">Every repair backed by a 90-day parts and labor warranty. No questions asked.</div></div>
+      <div class="st-why-card"><div class="st-why-icon">💲</div><div class="st-why-title">Upfront pricing</div><div class="st-why-text">We quote before we fix — no surprise charges. No fix means no fee.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== REVIEWS ===== -->
+<div>
+  <div class="st-section">
+    <p class="st-label">Reviews</p>
+    <h2>What Dallas customers say</h2>
+    <p class="st-sub">5-star service across the DFW area.</p>
+    <div class="st-reviews">
+      <div class="st-review">
+        <div class="st-stars">★★★★★</div>
+        <div class="st-review-text">"Technician arrived within 2 hours and fixed my washing machine the same day. Super professional and very fair pricing. Highly recommend!"</div>
+        <div class="st-reviewer"><div class="st-avatar">MR</div><div><div class="st-reviewer-name">Maria R.</div><div class="st-reviewer-loc">Oak Cliff, Dallas</div></div></div>
+      </div>
+      <div class="st-review">
+        <div class="st-stars">★★★★★</div>
+        <div class="st-review-text">"My fridge stopped cooling on a Friday night. SmartTech came Saturday morning and had it running by noon. Total lifesaver!"</div>
+        <div class="st-reviewer"><div class="st-avatar">JT</div><div><div class="st-reviewer-name">James T.</div><div class="st-reviewer-loc">Plano, TX</div></div></div>
+      </div>
+      <div class="st-review">
+        <div class="st-stars">★★★★★</div>
+        <div class="st-review-text">"Honest, fast, and affordable. They quoted me before starting and stuck to it. My oven works perfectly now. Will use again."</div>
+        <div class="st-reviewer"><div class="st-avatar">SL</div><div><div class="st-reviewer-name">Sandra L.</div><div class="st-reviewer-loc">Irving, TX</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SERVICE AREAS ===== -->
+<div class="st-section-bg">
+  <div class="st-section">
+    <p class="st-label">Service areas</p>
+    <h2>We serve all of Dallas &amp; DFW</h2>
+    <p class="st-sub">Same-day appliance repair available throughout the metroplex.</p>
+    <div class="st-areas">
+      <span class="st-area-pill">Dallas</span>
+      <span class="st-area-pill">Plano</span>
+      <span class="st-area-pill">Irving</span>
+      <span class="st-area-pill">Garland</span>
+      <span class="st-area-pill">Mesquite</span>
+      <span class="st-area-pill">Arlington</span>
+      <span class="st-area-pill">Grand Prairie</span>
+      <span class="st-area-pill">Carrollton</span>
+      <span class="st-area-pill">Richardson</span>
+      <span class="st-area-pill">Frisco</span>
+      <span class="st-area-pill">McKinney</span>
+      <span class="st-area-pill">Denton</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CTA ===== -->
+<div class="st-cta">
+  <h2>Ready to get your appliance fixed today?</h2>
+  <p>Call now — same-day appointments available across Dallas &amp; DFW.</p>
+  <div class="st-cta-btns">
+    <a href="tel:2145550199" class="st-cta-phone">📞 Call (214) 555-0199</a>
+    <a href="tel:2145550199" class="st-cta-outline">Book online →</a>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="st-footer">
+  <span class="st-footer-brand">© 2026 SmartTech Same-Day Appliance Repair · Dallas, TX · Licensed &amp; Insured</span>
+  <div class="st-footer-links">
+    <a href="#" class="st-footer-link">Services</a>
+    <a href="#" class="st-footer-link">Reviews</a>
+    <a href="tel:2145550199" class="st-footer-link">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
