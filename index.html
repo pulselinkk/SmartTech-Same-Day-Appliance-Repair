@@ -171,19 +171,22 @@
     </div>
     <div class="st-card">
       <h3>Get a free estimate</h3>
-      <input class="st-field" type="text" placeholder="Your name" />
-      <input class="st-field" type="tel" placeholder="Phone number" />
-      <select class="st-field">
-        <option value="">Select appliance</option>
-        <option>Washer</option>
-        <option>Dryer</option>
-        <option>Refrigerator</option>
-        <option>Stove / Oven</option>
-        <option>Dishwasher</option>
-        <option>Other</option>
-      </select>
-      <input class="st-field" type="text" placeholder="Zip code (Dallas area)" />
-      <button class="st-submit">Get my free estimate →</button>
+      <form action="https://formspree.io/f/xojpzvqw" method="POST">
+        <input class="st-field" type="text" name="name" placeholder="Your name" required="required"/>
+        <input class="st-field" type="tel" name="phone" placeholder="Phone number" required="required"/>
+        <select class="st-field" name="appliance">
+          <option value="">Select appliance</option>
+          <option>Washer</option>
+          <option>Dryer</option>
+          <option>Refrigerator</option>
+          <option>Stove / Oven</option>
+          <option>Dishwasher</option>
+          <option>Other</option>
+        </select>
+        <input class="st-field" type="text" name="zipcode" placeholder="Zip code (Dallas area)"/>
+        <textarea class="st-field" name="message" placeholder="Describe the problem (optional)" rows="3" style="resize:vertical;"></textarea>
+        <button class="st-submit" type="submit">Get my free estimate →</button>
+      </form>
     </div>
   </div>
 </div>
