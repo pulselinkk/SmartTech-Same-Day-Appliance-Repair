@@ -223,6 +223,105 @@
       margin-bottom: 14px;
     }
 
+
+    .maint-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .maint-overlay.open { display: flex; }
+    .maint-modal {
+      background: #fff;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 600px;
+      max-height: 85vh;
+      overflow-y: auto;
+      position: relative;
+    }
+    .maint-modal-header {
+      background: #fff7ed;
+      border-bottom: 1px solid #fed7aa;
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      position: sticky;
+      top: 0;
+      border-radius: 20px 20px 0 0;
+    }
+    .maint-modal-icon { font-size: 36px; }
+    .maint-modal-title { font-size: 20px; font-weight: bold; color: #1e293b; }
+    .maint-modal-sub { font-size: 12px; color: #f97316; font-weight: bold; margin-top: 2px; }
+    .maint-modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      font-size: 16px;
+      cursor: pointer;
+      color: #64748b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .maint-modal-body { padding: 24px 28px; }
+    .maint-freq-title {
+      font-size: 12px;
+      font-weight: bold;
+      color: #f97316;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 18px 0 8px;
+    }
+    .maint-freq-title:first-child { margin-top: 0; }
+    .maint-list { list-style: none; padding: 0; margin: 0 0 4px; }
+    .maint-list li {
+      font-size: 14px;
+      color: #475569;
+      padding: 6px 0;
+      border-bottom: 0.5px solid #f1f5f9;
+      display: flex;
+      gap: 8px;
+      line-height: 1.5;
+    }
+    .maint-list li:last-child { border-bottom: none; }
+    .maint-list li::before { content: "✓"; color: #f97316; font-weight: bold; flex-shrink: 0; }
+    .maint-tip-box {
+      background: #ffedd5;
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-top: 20px;
+      font-size: 13px;
+      color: #92400e;
+      line-height: 1.6;
+    }
+    .maint-tip-box strong { color: #c2410c; }
+    .maint-modal-footer {
+      padding: 16px 28px 24px;
+      text-align: center;
+    }
+    .maint-book-btn {
+      background: #f97316;
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
   </style>
 
   <script type="application/ld+json">
@@ -330,12 +429,12 @@
     <h2>All major home appliances</h2>
     <p class="st-sub">From washers to refrigerators, our certified technicians fix it fast — right at your home.</p>
     <div class="st-services">
-      <div class="st-service"><span class="st-service-icon">🫧</span><div class="st-service-name">Washer</div><div class="st-service-desc">All brands &amp; models</div></div>
-      <div class="st-service"><span class="st-service-icon">♨️</span><div class="st-service-name">Dryer</div><div class="st-service-desc">Gas &amp; electric</div></div>
-      <div class="st-service"><span class="st-service-icon">🧊</span><div class="st-service-name">Refrigerator</div><div class="st-service-desc">French door, side-by-side</div></div>
-      <div class="st-service"><span class="st-service-icon">🔥</span><div class="st-service-name">Stove / Oven</div><div class="st-service-desc">Gas, electric &amp; induction</div></div>
-      <div class="st-service"><span class="st-service-icon">🍽️</span><div class="st-service-name">Dishwasher</div><div class="st-service-desc">All major brands</div></div>
-      <div class="st-service"><span class="st-service-icon">❄️</span><div class="st-service-name">Freezer</div><div class="st-service-desc">Chest &amp; upright</div></div>
+      <div class="st-service" onclick="openMaint('washer')" style="cursor:pointer"><span class="st-service-icon">🫧</span><div class="st-service-name">Washer</div><div class="st-service-desc">Tap for maintenance tips</div></div>
+      <div class="st-service" onclick="openMaint('dryer')" style="cursor:pointer"><span class="st-service-icon">♨️</span><div class="st-service-name">Dryer</div><div class="st-service-desc">Tap for maintenance tips</div></div>
+      <div class="st-service" onclick="openMaint('fridge')" style="cursor:pointer"><span class="st-service-icon">🧊</span><div class="st-service-name">Refrigerator</div><div class="st-service-desc">Tap for maintenance tips</div></div>
+      <div class="st-service" onclick="openMaint('stove')" style="cursor:pointer"><span class="st-service-icon">🔥</span><div class="st-service-name">Stove / Oven</div><div class="st-service-desc">Tap for maintenance tips</div></div>
+      <div class="st-service" onclick="openMaint('dishwasher')" style="cursor:pointer"><span class="st-service-icon">🍽️</span><div class="st-service-name">Dishwasher</div><div class="st-service-desc">Tap for maintenance tips</div></div>
+      <div class="st-service" onclick="openMaint('freezer')" style="cursor:pointer"><span class="st-service-icon">❄️</span><div class="st-service-name">Freezer</div><div class="st-service-desc">Tap for maintenance tips</div></div>
     </div>
   </div>
 </div>
@@ -419,6 +518,7 @@
   <div class="st-footer-links">
     <a href="#" class="st-footer-link">Services</a>
     <a href="#" class="st-footer-link">Reviews</a>
+    <a href="maintenance.html" class="st-footer-link">Maintenance guide</a>
     <a href="#book" class="st-footer-link">Book a repair</a>
   </div>
 </footer>
@@ -498,5 +598,113 @@
     btn.addEventListener("click", openModal);
   });
 </script>
+
+<!-- MAINTENANCE MODAL -->
+<div class="maint-overlay" id="maintOverlay">
+  <div class="maint-modal" id="maintModal">
+    <div class="maint-modal-header">
+      <span class="maint-modal-icon" id="maintIcon"></span>
+      <div>
+        <div class="maint-modal-title" id="maintTitle"></div>
+        <div class="maint-modal-sub" id="maintSub"></div>
+      </div>
+      <button class="maint-modal-close" id="maintClose">&#x2715;</button>
+    </div>
+    <div class="maint-modal-body" id="maintBody"></div>
+    <div class="maint-modal-footer">
+      <button class="maint-book-btn" onclick="document.getElementById('maintOverlay').classList.remove('open'); document.getElementById('bookingOverlay').classList.add('open'); document.body.style.overflow='hidden';">Book a repair today</button>
+    </div>
+  </div>
+</div>
+
+<script>
+var maintData = {
+  washer: {
+    icon: "🫧", title: "Washing Machine", sub: "Lifespan: 10-14 years",
+    sections: [
+      { label: "Every use", items: ["Leave door open after each cycle to prevent mold", "Don't overload — it strains the motor and drum"] },
+      { label: "Monthly", items: ["Run a cleaning cycle with washer cleaner or white vinegar", "Wipe down the door seal and remove lint buildup", "Clean the detergent drawer with warm water"] },
+      { label: "Every 3-6 months", items: ["Check and clean the drain pump filter", "Inspect hoses for cracks or bulging", "Check that the machine is level"] },
+      { label: "Yearly", items: ["Replace inlet hoses if older than 5 years", "Inspect the drum for rust or damage"] }
+    ],
+    tip: "<strong>Pro tip:</strong> Always use HE detergent in front-load washers. Regular detergent creates excess suds and damages drum bearings over time."
+  },
+  dryer: {
+    icon: "♨️", title: "Dryer", sub: "Lifespan: 10-13 years",
+    sections: [
+      { label: "Every use", items: ["Clean the lint trap before every cycle", "Never run the dryer without the lint screen", "Don't overload — clothes need room to tumble"] },
+      { label: "Every 3 months", items: ["Vacuum the lint trap slot", "Inspect and clean the exhaust duct", "Check the exterior vent flap opens properly"] },
+      { label: "Yearly", items: ["Professional duct cleaning — prevents fire risk", "Check and clean the moisture sensor bars", "Inspect the drum belt for wear"] }
+    ],
+    tip: "<strong>Warning:</strong> A clogged dryer vent is the #1 cause of dryer fires. If your dryer takes more than one cycle, the vent is likely clogged."
+  },
+  fridge: {
+    icon: "🧊", title: "Refrigerator", sub: "Lifespan: 13-17 years",
+    sections: [
+      { label: "Monthly", items: ["Clean door gaskets with warm soapy water", "Check that door seals are airtight (paper test)", "Keep temperature between 35-38°F"] },
+      { label: "Every 6 months", items: ["Vacuum the condenser coils (back or bottom)", "Replace the water filter if you have an ice maker", "Pull out fridge and clean behind it"] },
+      { label: "Yearly", items: ["Inspect door hinges and adjust if needed", "Check the defrost drain for clogs", "Verify the freezer is at 0°F"] }
+    ],
+    tip: "<strong>Dallas tip:</strong> The DFW heat and dust make condenser coils get dirty faster. Clean them every 6 months to avoid costly compressor failure."
+  },
+  stove: {
+    icon: "🔥", title: "Stove / Oven", sub: "Lifespan: 13-15 years",
+    sections: [
+      { label: "After every use", items: ["Wipe down burners and stovetop when cool", "Clean spills immediately to prevent baking on"] },
+      { label: "Monthly", items: ["Deep clean burner grates and caps", "Run oven self-clean cycle if available", "Clean the oven door glass inside and out", "Check gas burner ignitors for proper spark"] },
+      { label: "Yearly", items: ["Check gas connections for leaks (soap test)", "Calibrate oven temperature with a thermometer", "Inspect oven door hinges and seal"] }
+    ],
+    tip: "<strong>Safety tip:</strong> If you smell gas near your stove, leave the house immediately and call your gas company. Never try to fix a gas leak yourself."
+  },
+  dishwasher: {
+    icon: "🍽️", title: "Dishwasher", sub: "Lifespan: 9-12 years",
+    sections: [
+      { label: "Weekly", items: ["Scrape food off dishes before loading", "Check and clean the spray arms", "Wipe the door edges and gasket"] },
+      { label: "Monthly", items: ["Clean and rinse the filter at the bottom", "Run a cleaning cycle with white vinegar", "Clean the drain to prevent clogs"] },
+      { label: "Yearly", items: ["Inspect the door gasket for cracks", "Check water inlet valve for mineral buildup", "Run a descaling cycle — important in Dallas hard water areas"] }
+    ],
+    tip: "<strong>Dallas tip:</strong> DFW has very hard water. Use rinse aid every cycle and descale every 3 months to prevent mineral buildup."
+  },
+  freezer: {
+    icon: "❄️", title: "Freezer", sub: "Lifespan: 12-20 years",
+    sections: [
+      { label: "Monthly", items: ["Check door seals for cracks or gaps", "Keep temperature at 0°F or below", "Don't block air vents inside the freezer"] },
+      { label: "Every 6 months", items: ["Defrost manual-defrost freezers when ice exceeds 1/4 inch", "Vacuum condenser coils", "Clean the interior with baking soda solution"] },
+      { label: "Yearly", items: ["Inspect the door gasket and replace if worn", "Check the defrost drain for clogs", "Test the temperature with a thermometer"] }
+    ],
+    tip: "<strong>Pro tip:</strong> A full freezer is more energy efficient than an empty one. If yours is mostly empty, fill unused space with bags of ice."
+  }
+};
+
+function openMaint(type) {
+  var d = maintData[type];
+  document.getElementById("maintIcon").textContent = d.icon;
+  document.getElementById("maintTitle").textContent = d.title;
+  document.getElementById("maintSub").textContent = d.sub;
+  var body = "";
+  d.sections.forEach(function(s) {
+    body += '<div class="maint-freq-title">' + s.label + '</div>';
+    body += '<ul class="maint-list">';
+    s.items.forEach(function(item) { body += "<li>" + item + "</li>"; });
+    body += "</ul>";
+  });
+  body += '<div class="maint-tip-box">' + d.tip + "</div>";
+  document.getElementById("maintBody").innerHTML = body;
+  document.getElementById("maintOverlay").classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+document.getElementById("maintClose").addEventListener("click", function() {
+  document.getElementById("maintOverlay").classList.remove("open");
+  document.body.style.overflow = "";
+});
+document.getElementById("maintOverlay").addEventListener("click", function(e) {
+  if (e.target === this) {
+    this.classList.remove("open");
+    document.body.style.overflow = "";
+  }
+});
+</script>
+
 </body>
 </html>
